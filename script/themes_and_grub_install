@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Cloning of vinceliuce vimix gtk themes and tela icon theme
+git clone https://github.com/vinceliuice/Vimix-gtk-themes.git
+git clone https://github.com/vinceliuice/Tela-icon-theme.git
+
+# Installation of oreo spark cursor 
+tar -xvzf icons/oreo-spark-purple-cursors.tar.gz 
+
+chown -R root:root oreo_spark_purple_cursors/
+mv oreo_spark_purple_cursors/ /usr/share/icons/ 
+
+# Installation of Vimix gtk theme and tela green icon theme
+./Vimix-gtk-themes/install.sh -d /usr/share/themes/
+./Tela-icon-theme/install.sh green -d /usr/share/icons/
+
+#Remove some .desktop files and the Vimix and tela icon folders 
+rm /usr/share/applications/lshw-gtk.desktop
+rm /usr/share/applications/gparted.desktop
+rm icons/oreo-spark-purple-cursors.tar.gz
+rm -R Vimix-gtk-themes/
+rm -R Tela-icon-theme/
+
+# Adding icons and .desktop
+mv desktop/* /usr/share/applications
+mv icons/* /usr/share/icons 
+mkdir /usr/share/backgrounds/
+mv config/mfakurian_abstract.jpg /usr/share/backgrounds/mfakurian_abstract.jpg
+
+#Lightdm config 
+rm /etc/lightdm/slick-greeter.conf
+chown root:root config/slick-greeter.conf
+chmod 644 config/slick-greeter.conf
+mv config/slick-greeter.conf  /etc/lightdm/slick-greeter.conf
+

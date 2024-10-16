@@ -1,0 +1,23 @@
+#!/bin/bash
+
+apt update -y && apt upgrade -y 
+
+#Remove of some unwanted software
+while read line 
+  do
+  rm_pack+=" "$line
+  done< txt/remove.txt
+
+apt remove ${rm_pack} -y
+
+#Installation of apt packages
+while read line 
+  do
+  apt_pack+=" "$line
+  done< txt/apt.txt
+
+apt install ${apt_pack} -y
+
+apt update -y
+
+apt install -f 

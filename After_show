@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Check if Script is Run as user 
+if [[ $EUID -ne 0 ]]; then  
+
+  dconf load -f / < config/mint_eggs
+  
+  git clone https://github.com/pieroproietti/get-eggs
+  cd get-eggs
+  sudo ./get-eggs.sh
+
+  cd ../..
+  sudo rm -R mint_prepare_live_iso_penguin_eggs
+
+  cd $HOME 
+  
+  echo -ne "
+---------------------------------------------------------------------------------------------------
+   Now it is prepared you can modify the system or produce the ISO with eggs produce --clone  
+---------------------------------------------------------------------------------------------------
+"
+  echo -ne "
+-------------------------------------------------------------------------
+                    Wait until the reboot  ...
+-------------------------------------------------------------------------
+"&& sleep 15
+reboot
+
+  else
+    echo "You must be a non-root user to run this script, please run ./install" 2>&1
+    exit 1
+fi
+
