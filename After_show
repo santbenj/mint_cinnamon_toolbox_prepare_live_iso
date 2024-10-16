@@ -10,7 +10,7 @@ if [[ $EUID -ne 0 ]]; then
   sudo ./get-eggs.sh
 
   cd ../..
-  sudo rm -R mint_prepare_live_iso_penguin_eggs
+  sudo rm -R mint_cinnamon_toolbox_prepare_live_iso
 
   cd $HOME 
   

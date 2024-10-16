@@ -3,12 +3,11 @@
 # Cloning of vinceliuce vimix gtk themes and tela icon theme
 git clone https://github.com/vinceliuice/Vimix-gtk-themes.git
 git clone https://github.com/vinceliuice/Tela-icon-theme.git
+git clone https://github.com/milkmadedev/oreo-cursors-compiled
 
 # Installation of oreo spark cursor 
-tar -xvzf icons/oreo-spark-purple-cursors.tar.gz 
-
-chown -R root:root oreo_spark_purple_cursors/
-mv oreo_spark_purple_cursors/ /usr/share/icons/ 
+chown -R root:root oreo-cursors-compiled/oreo_spark_purple_cursors/ 
+mv oreo-cursors-compiled/oreo_spark_purple_cursors/ /usr/share/icons/ 
 
 # Installation of Vimix gtk theme and tela green icon theme
 ./Vimix-gtk-themes/install.sh -d /usr/share/themes/
@@ -17,9 +16,10 @@ mv oreo_spark_purple_cursors/ /usr/share/icons/
 #Remove some .desktop files and the Vimix and tela icon folders 
 rm /usr/share/applications/lshw-gtk.desktop
 rm /usr/share/applications/gparted.desktop
-rm icons/oreo-spark-purple-cursors.tar.gz
+
 rm -R Vimix-gtk-themes/
 rm -R Tela-icon-theme/
+rm -R oreo-cursors-compiled/
 
 # Adding icons and .desktop
 mv desktop/* /usr/share/applications
