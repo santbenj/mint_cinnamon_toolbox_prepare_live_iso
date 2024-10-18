@@ -3,7 +3,7 @@ I recommend using this script on a Virtual Machine with at least 30 GIO, just to
 
 For these script I recommend the use of virtual machines, you can use [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or Virt-Manager. 
 
-This script is a starting point to create a toolbox system which can be export as an ISO. The objective of these scripts is to have an all-in-one liveUSB system who can repair,backup or customize your computer if you need it.
+These scripts are a starting point to create a toolbox system which can be export as an ISO. The objectives of these scripts are to create an all-in-one liveUSB system who can repair,backup or customize your computer if you need it.
 
 # Installation 
 
