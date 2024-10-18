@@ -6,14 +6,12 @@ if [[ $EUID -ne 0 ]]; then
   dconf load -f / < config/mint_eggs
 
   tar -xvzf config/config.tar.gz
-  tar -xvzf config/mozilla_mint_penguin.tar.gz
 
   rm -R ~/.config
   mv -f .config/ ~
 
   #Begin of scripts 
   sudo ./script/install_begin
-  mv -f .mozilla/ ~/.mozilla/
 
   dconf load -f / < config/mint_eggs
 

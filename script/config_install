@@ -28,8 +28,6 @@ unzip config/linux-mac-style.zip
 mv linux-mac-style/ /usr/share/plymouth/themes/
 update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/linux-mac-style/linux-mac-style.plymouth 200
 
-#Remove mozilla configuration to replace with a new one 
-rm -R /home/$util/.mozilla/
 
 #Cleaning packages 
 apt autoclean
